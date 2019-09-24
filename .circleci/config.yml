@@ -41,9 +41,7 @@ jobs:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}
 
-      - run: mvn clean install -DskipTests=true
-
-      # - run: mvn liquibase:update -Dliquibase.dropFirst=true
+      - run: mvn clean install
 
       # run tests!
       - run: mvn integration-test
